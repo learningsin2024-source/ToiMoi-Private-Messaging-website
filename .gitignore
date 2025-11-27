@@ -1,0 +1,21 @@
+node_modules/
+dist/
+output.css
+.env
+vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# IDE / Editor files
+.vscode/
+.idea/
+
+# Cache
+.cache/
+*.cache
