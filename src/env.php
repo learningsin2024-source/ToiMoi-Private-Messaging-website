@@ -1,5 +1,12 @@
 <?php
+
+
+
+    
 function loadEnv($file = __DIR__ . '/../.env') {
+
+    if (getenv('DB_HOST')) return; 
+    if (!file_exists($file)) return;
     if (!file_exists($file)) return;
 
     $lines = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
