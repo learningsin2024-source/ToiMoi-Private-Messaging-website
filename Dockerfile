@@ -1,17 +1,14 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
 # Install mysqli extension
 RUN docker-php-ext-install mysqli
 
-# Fix Apache MPM conflict - disable all then enable only prefork
-RUN apt-get update && apt-get install -y apache2 \
-    && a2dismod mpm_event mpm_worker mpm_prefork \
-    && a2enmod mpm_prefork \
-    && a2enmod rewrite
-
 # Copy project files
-COPY project/ /var/www/html/
+COPY project/ /app/
+
+# Set working directory
+WORKDIR /app
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["php", "-S", "0.0.0.0:80", "-t", "/app"]
