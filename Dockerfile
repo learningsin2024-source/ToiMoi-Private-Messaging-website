@@ -1,14 +1,12 @@
 FROM php:8.2-apache
 
+# Install mysqli extension
 RUN docker-php-ext-install mysqli
 
-COPY . /var/www/html/
+# Copy only package folder contents into Apache root
+COPY package/ /var/www/html/
 
-RUN chown -R www-data:www-data /var/www/html
-
-# Tell Apache to use src as public folder
-ENV APACHE_DOCUMENT_ROOT /var/www/html/src
-RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
-RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# Enable rewrite (good practice)
+RUN a2enmod rewrite
 
 EXPOSE 80
