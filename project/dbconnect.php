@@ -1,7 +1,5 @@
 <?php
-
 require_once __DIR__ . '/env.php';
-
 loadEnv();
 
 $servername = getenv("DB_HOST");
