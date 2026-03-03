@@ -6,9 +6,8 @@ RUN docker-php-ext-install mysqli
 # Copy project files
 COPY project/ /app/
 
-# Set working directory
 WORKDIR /app
 
-EXPOSE 80
+EXPOSE ${PORT:-80}
 
-CMD ["php", "-S", "0.0.0.0:80", "-t", "/app"]
+CMD php -S 0.0.0.0:${PORT:-80} -t /app
