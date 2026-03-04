@@ -1,7 +1,12 @@
 FROM php:8.2-cli
 
-# Install mysqli extension
-RUN docker-php-ext-install mysqli
+# Install mysqli, zip extensions and git
+RUN apt-get update && apt-get install -y \
+    git \
+    zip \
+    unzip \
+    libzip-dev \
+    && docker-php-ext-install mysqli zip
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
