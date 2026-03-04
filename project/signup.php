@@ -95,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
 
                 mysqli_stmt_close($stm);
-                header("Location: Dashboard.php");
+                header("Location: dashboard.php");
                 exit;
             } else {
                 $errorpass = "Database insert error: " . mysqli_error($conn);
