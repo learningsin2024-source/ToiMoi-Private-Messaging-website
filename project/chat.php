@@ -25,7 +25,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     $receiver_id = ($row['user1_id'] == $sender_id) ? $row['user2_id'] : $row['user1_id'];
 } else {
     // If no connection, stop execution
-    header("Location: index.php");
+    header("Location: dashboard.php");
     exit;
 }
 
