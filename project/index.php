@@ -52,20 +52,19 @@ mysqli_close($conn);
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="./images/Favicon.png">
     <style>
-      /* Prevent iOS zoom on input focus */
+
       input[type="text"],
       input[type="email"],
       input[type="password"] {
         font-size: 16px !important;
       }
 
-      /* Smooth mobile scrolling */
+   
       html {
         -webkit-text-size-adjust: 100%;
         scroll-behavior: smooth;
       }
 
-      /* Fix 100vh on mobile browsers (address bar issue) */
       .min-safe-h {
         min-height: 100dvh;
       }
@@ -94,7 +93,7 @@ mysqli_close($conn);
         </button>
       </a>
       <button id="menu-toggle" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">Open  menu</span>
         <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
         </svg>
